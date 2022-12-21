@@ -1,23 +1,17 @@
-import { uploadPhoto, createUser } from './utils'
+import { uploadPhoto, createUser } from './utils';
 
-
-function sol(upphoto, creuser) {
-  const photo = await upphoto;
-  const user = await creuser;
-  return {
-    photo,
-    user,
-  };
-}
-export default async function asyncUploadUser(uploadPhoto, createUser) {
+export default async function asyncUploadUser() {
   try {
-    const res = sol(uploadPhoto, createUser);
-    return res;
-  } catch (err) {
+    const photo = await uploadPhoto();
+    const user = await createUser();
+    return {
+      photo,
+      user,
+    };
+  } catch (error) {
     return {
       photo: null,
       user: null,
     };
   }
 }
-
