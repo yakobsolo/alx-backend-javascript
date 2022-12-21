@@ -1,3 +1,3 @@
-function getResponseFromApi(){
+function getResponseFromAPI(){
   return new Promise(() => {});
 }
