@@ -22,3 +22,4 @@ export default class Currency {
   function displayFullCurrency() {
     return `${this._name} (${this._code})`;
   }
+}
