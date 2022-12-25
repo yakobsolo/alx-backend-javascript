@@ -11,7 +11,7 @@ export default class Pricing {
   }
 
   set amount(newamount) {
-    this._amount = newamount;
+    if (typeof amount === 'number') this._amount = newamount;
   }
 
   get currency() {
@@ -19,7 +19,7 @@ export default class Pricing {
   }
 
   set currency(newcurrency) {
-    this._currency = newcurrency;
+    if (currency instanceof Currency) this._currency = newcurrency;
   }
 
   displayFullPrice() {
